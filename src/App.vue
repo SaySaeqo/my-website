@@ -37,5 +37,9 @@ ul {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  flex:1;
+}
+body {
+  display: flex;
 }
 </style>
