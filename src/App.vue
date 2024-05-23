@@ -1,4 +1,5 @@
 <template>
+  <h1>Subpages</h1>
   <ul ref="subpages">
     <li v-for="page in pages" :key="page">
       <a :href="page">{{ page }}</a>
@@ -8,16 +9,19 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import axios from "axios";
+
 
 export default defineComponent({
   name: "App",
   data() {
     return {
-      pages: [
-        "subpage1",
-        "subpage2"
-      ]
+        pages: []
     };
+  },
+  async created() {
+    const response = await axios.get(location.origin + "/subpages.json");
+    this.pages = response.data.pages;
   },
 });
 </script>
