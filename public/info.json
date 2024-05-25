@@ -1,0 +1,33 @@
+{
+    "pages": [
+        {
+            "title": "Subpage 1",
+            "url": "/subpage1",
+            "info": "This is a subpage."
+        },
+        {
+            "title": "Subpage 2",
+            "url": "/subpage2",
+            "info": "This is another subpage."
+        }
+    ],
+    "info": "This is a page with subpages.",
+    "img": "/img.png",
+    "socials": [
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/saysaeqo/",
+            "icon": "/icons/instagram.png"
+        },
+        {
+            "name": "DeviantArt",
+            "url": "https://www.deviantart.com/SaySaeqo",
+            "icon": "/icons/deviantart.png"
+        },
+        {
+            "name": "Pinterest",
+            "url": "https://www.pinterest.com/saysaeqo/",
+            "icon": "/icons/pinterest.png"
+        }
+    ]
+}
