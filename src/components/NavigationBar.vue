@@ -2,7 +2,7 @@
     <nav class="navigation-bar" :class="isOpen ? 'open' : ''">
       <img src="../assets/hamburger-menu.svg" class="hamburger-menu" @click="isOpen = !isOpen">
       <a v-for="page in pages" :key="page.url"
-        :href="page.url">
+        :href="page.url" :style="aOnHover ? 'display:flex;' : ''">
         <img :src="page.icon">
         <p>{{ page.title }}</p>
       </a>
@@ -23,6 +23,7 @@ export default defineComponent({
         img: "/info_image",
         socials: [{url: "", icon: ""}],
         isOpen: false,
+        aOnHover: false,
     };
   },
   async created() {
@@ -34,8 +35,19 @@ export default defineComponent({
   },
 
   mounted() {
-    this.isOpen = window.innerWidth > 1200;
-  }
+    this.onResize();
+    window.addEventListener("resize", this.onResize);
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("resize", this.onResize);
+  },
+
+  methods: {
+    onResize() {
+      this.aOnHover = window.innerWidth > 1100;
+    },
+  },
 });
 </script>
   
