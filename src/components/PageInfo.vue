@@ -81,6 +81,8 @@ li:hover {
   align-items: flex-start;
   border: #ccc 1px solid;
   align-items: center;
+  padding: 0.5em;
+  padding-top: 0;
 }
 .info-img {
   width: 100%;
