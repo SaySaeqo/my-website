@@ -80,6 +80,7 @@ li:hover {
   flex-direction: column;
   align-items: flex-start;
   border: #ccc 1px solid;
+  align-items: center;
 }
 .info-img {
   width: 100%;

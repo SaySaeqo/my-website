@@ -3,12 +3,14 @@
         {
             "title": "Subpage 1",
             "url": "/subpage1",
-            "info": "This is a subpage."
+            "info": "This is a subpage.",
+            "icon": "/icons/example.png"
         },
         {
-            "title": "Subpage 2",
+            "title": "Subpage 2 asfa dddddd",
             "url": "/subpage2",
-            "info": "This is another subpage."
+            "info": "This is another subpage.",
+            "icon": "/icons/example.png"
         }
     ],
     "info": "This is a page with subpages.",
