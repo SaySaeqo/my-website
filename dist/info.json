@@ -1,0 +1,50 @@
+{
+    "pages": [
+        {
+            "title": "Subpage 1",
+            "url": "/subpage1",
+            "info": "This is a subpage.",
+            "icon": "/icons/example.png"
+        },
+        {
+            "title": "Subpage 2",
+            "url": "/subpage2",
+            "info": "This is another subpage.",
+            "icon": "/icons/example.png"
+        }
+    ],
+    "info": "This is a page with subpages.",
+    "img": "/icons/avatar.png",
+    "socials": [
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/saysaeqo/",
+            "icon": "/icons/instagram.png"
+        },
+        {
+            "name": "DeviantArt",
+            "url": "https://www.deviantart.com/SaySaeqo",
+            "icon": "/icons/deviantart.png"
+        },
+        {
+            "name": "Pinterest",
+            "url": "https://www.pinterest.com/saysaeqo/",
+            "icon": "/icons/pinterest.png"
+        },
+        {
+            "name": "GitHub",
+            "url": "https://www.github.com/SaySaeqo/",
+            "icon": "/icons/github.png"
+        },
+        {
+            "name": "MyAnimeList",
+            "url": "https://myanimelist.net/animelist/SaySaeqo?status=2&order=4&order2=0",
+            "icon": "/icons/mal.png"
+        },
+        {
+            "name": "Webkomiksy",
+            "url": "https://webkomiksy.pl/autor?v=ZwK-LUwNWF9C",
+            "icon": "/icons/webkomiksy.png"
+        }
+    ]
+}
