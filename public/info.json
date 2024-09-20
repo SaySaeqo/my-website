@@ -1,10 +1,10 @@
 {
     "pages": [
         {
-            "title": "Subpage 1",
-            "url": "/subpage1",
-            "info": "This is a subpage.",
-            "icon": "/icons/example.png"
+            "title": "MGW design prop",
+            "url": "/mgw-design",
+            "info": "MageGuildWars pbf new app design proposition.",
+            "icon": "/icons/mgw-logo-mono.png"
         },
         {
             "title": "Subpage 2",
