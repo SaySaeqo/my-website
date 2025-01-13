@@ -1,5 +1,5 @@
 <template>
-  <BorderBox class="home-view" title="Info">
+  <BorderBox title="Info">
     <img :src="img" alt="info_image" class="info-img">
     <p>{{ info }}</p>
     <h2>Subpages</h2>

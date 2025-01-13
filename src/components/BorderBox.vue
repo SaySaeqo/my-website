@@ -14,7 +14,7 @@ export default defineComponent({
         title: {
             type: String,
             default: "Subpage"
-        },
+        }
     },
 });
 </script>
