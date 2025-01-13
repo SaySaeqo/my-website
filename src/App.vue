@@ -1,18 +1,16 @@
 <template>
   <NavigationBar />
-  <PageInfo />
+  <router-view class="router-view"/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import PageInfo from "./components/PageInfo.vue";
 import NavigationBar from "./components/NavigationBar.vue";
 
 
 export default defineComponent({
   name: "App",
   components: {
-    PageInfo,
     NavigationBar,
   },
 });
@@ -36,12 +34,12 @@ body {
   position: fixed;
   left: 0;
 }
-.page-info {
+.router-view {
   align-self: center;
   flex: 1;
 }
 @media screen and (min-width: 1000px) {
-  .page-info {
+  .router-view {
     width: 1000px;
     flex: none;
   }

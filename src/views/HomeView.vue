@@ -1,12 +1,11 @@
 <template>
-  <div class="page-info">
-    <h1>Info</h1>
+  <BorderBox class="home-view" title="Info">
     <img :src="img" alt="info_image" class="info-img">
     <p>{{ info }}</p>
     <h2>Subpages</h2>
     <ul>
       <li v-for="page in pages" :key="page.url">
-        <a :href="page.url">{{ page.title }}</a>
+        <router-link :to="page.url">{{ page.title }}</router-link>
         <div class="tooltip">{{ page.info }}</div>
       </li>
     </ul>
@@ -19,16 +18,20 @@
     </div>
 
 
-  </div>
+  </BorderBox>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "axios";
+import BorderBox from "@/components/BorderBox.vue";
 
 
 export default defineComponent({
-  name: "PageInfo",
+  name: "HomeView",
+  components: {
+    BorderBox,
+  },
   data() {
     return {
         pages: [{url: "", title: "", info: ""}],
@@ -74,15 +77,6 @@ li:hover {
   .tooltip {
     display: block;
   }
-}
-.page-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  border: #ccc 1px solid;
-  align-items: center;
-  padding: 0.5em;
-  padding-top: 0;
 }
 .info-img {
   width: 100%;
