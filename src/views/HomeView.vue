@@ -5,7 +5,8 @@
     <h2>Subpages</h2>
     <ul>
       <li v-for="page in pages" :key="page.url">
-        <router-link :to="page.url">{{ page.title }}</router-link>
+        <router-link v-if="!page.isExternal" :to="page.url">{{ page.title }}</router-link>
+        <a v-else :href="page.url">{{ page.title }}</a>
         <div class="tooltip">{{ page.info }}</div>
       </li>
     </ul>

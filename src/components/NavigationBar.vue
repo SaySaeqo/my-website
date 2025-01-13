@@ -1,11 +1,18 @@
 <template>
     <nav class="navigation-bar" :class="isOpen ? 'open' : ''">
       <img src="../assets/hamburger-menu.svg" class="hamburger-menu" @click="isOpen = !isOpen">
-      <router-link v-for="page in pages" :key="page.url"
-        :to="page.url" :style="onBigScreen ? 'display:flex;' : ''">
-        <img :src="page.icon">
-        <p>{{ page.title }}</p>
-      </router-link>
+      <div v-for="page in pages" :key="page.url">
+        <router-link v-if="!page.isExternal" 
+          :to="page.url" :style="onBigScreen ? 'display:flex;' : ''">
+          <img :src="page.icon">
+          <p>{{ page.title }}</p>
+        </router-link>
+        <a v-else 
+          :href="page.url" :style="onBigScreen ? 'display:flex;' : ''">
+          <img :src="page.icon">
+          <p>{{ page.title }}</p>
+        </a>
+      </div>
     </nav>
 </template>
   
@@ -18,7 +25,7 @@ export default defineComponent({
   name: "NavigationBar",
   data() {
     return {
-        pages: [{url: "", title: "", info: "", icon: ""}],
+        pages: [{url: "", title: "", info: "", icon: "", isExternal: false}],
         info: "",
         img: "/info_image",
         socials: [{url: "", icon: ""}],

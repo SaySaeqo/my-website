@@ -10,7 +10,8 @@
             "title": "MGW design prop",
             "url": "/mgw-design",
             "info": "MageGuildWars pbf new app design proposition.",
-            "icon": "/icons/mgw-logo-mono.png"
+            "icon": "/icons/mgw-logo-mono.png",
+            "isExternal": true
         },
         {
             "title": "Wiersze",
