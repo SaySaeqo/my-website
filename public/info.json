@@ -17,7 +17,7 @@
             "title": "Wiersze",
             "url": "/poetry",
             "info": "Moje wiersze od serca.",
-            "icon": "/icons/example.png"
+            "icon": "/icons/poetry.svg"
         }
     ],
     "info": "This is a page with subpages.",
