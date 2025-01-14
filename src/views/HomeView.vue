@@ -13,9 +13,10 @@
 
     <h2>Socials</h2>
     <div class="socials">
-      <a v-for="social in socials" :key="social.url" :href="social.url">
-        <img :src="social.icon">
-      </a>
+      <div class="social" v-for="social in socials" :key="social.url">
+        <a :href="social.url"><img :src="social.icon"></a>
+        <div class="tooltip">{{ social.name }}</div>
+      </div>
     </div>
 
 
@@ -38,7 +39,7 @@ export default defineComponent({
         pages: [{url: "", title: "", info: ""}],
         info: "",
         img: "/info_image",
-        socials: [{url: "", icon: ""}],
+        socials: [{url: "", icon: "", name: ""}],
     };
   },
   async created() {
@@ -52,23 +53,22 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.tooltip {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
 ul {
   list-style-type: square;
 }
 li {
   position: relative;
   margin-bottom: 0.5em;
-
-  .tooltip {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 4px;
-  }
 
   a {
     margin-right: 1em;
@@ -94,6 +94,18 @@ li:hover {
   }
   img:hover {
     opacity: 1;
+  }
+  .social {
+    position: relative;
+
+    .tooltip {
+      bottom: 100%;
+    }
+  }
+  .social:hover {
+    .tooltip {
+      display: block;
+    }
   }
 }
 </style>
