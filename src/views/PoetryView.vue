@@ -1,7 +1,7 @@
 <template>
     <BorderBox title="Poetry">
         <div class="poetry-view">
-            <div class="poem" v-for="poem in poems" :key="poem.title">
+            <div class="poem" v-for="[idx, poem] in poems.entries()" :key="idx" :id="String(idx)">
                 <h2>{{ poem.title }}</h2>
                 <p class="poetry-line" v-for="line in poem.lines.entries()" :key="line[0]">
                     {{ line[1] }}
@@ -9,6 +9,16 @@
                 <p class="author">~SaySaeqo</p>
             </div>
         </div>
+        <vue-cusdis
+            :attrs="{
+            host: 'https://cusdis.com',
+            appId: '72045998-e06e-4430-a256-117c5fb15049',
+            pageId: location.hash,
+            pageTitle: 'Poetry',
+            pageUrl: location,
+            }"
+            class="comments"
+        ></vue-cusdis>
     </BorderBox>
 </template>
 
@@ -16,15 +26,18 @@
 import BorderBox from "@/components/BorderBox.vue";
 import { defineComponent } from "vue";
 import axios from "axios";
+import VueCusdis from "vue-cusdis";
 
 export default defineComponent({
     name: "PoetryView",
     components: {
         BorderBox,
+        VueCusdis,
     },
     data() {
         return {
             poems: [{title: "", lines: [""]}],
+            location: window.location,
         };
     },
     async created() {
@@ -82,5 +95,11 @@ export default defineComponent({
         margin-top: 0.5em;
         margin-left: 2em;
     }
+}
+.comments {
+    width: 100%;
+    max-width: 800px;
+    height: 40em;
+    display: flex;
 }
 </style>
