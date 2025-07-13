@@ -9,6 +9,7 @@
                 <p class="author">~SaySaeqo</p>
             </div>
         </div>
+        <h2>Comments</h2>
         <vue-cusdis
             :attrs="{
             host: 'https://cusdis.com',
