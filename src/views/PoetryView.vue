@@ -1,5 +1,5 @@
 <template>
-    <BorderBox title="Poetry">
+    <BorderBox :title="$t('poetry.title')">
         <div class="poetry-view">
             <div class="poem" v-for="[idx, poem] in poems.entries()" :key="idx" :id="String(idx)">
                 <h2>{{ poem.title }}</h2>
@@ -9,7 +9,7 @@
                 <p class="author">~SaySaeqo</p>
             </div>
         </div>
-        <h2>Comments</h2>
+        <h2>{{ t('comments') }}</h2>
         <vue-cusdis
             :attrs="{
             host: 'https://cusdis.com',
@@ -28,6 +28,7 @@ import BorderBox from "@/components/BorderBox.vue";
 import { defineComponent } from "vue";
 import axios from "axios";
 import VueCusdis from "vue-cusdis";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
     name: "PoetryView",
@@ -40,6 +41,13 @@ export default defineComponent({
             poems: [{title: "", lines: [""]}],
             location: window.location,
         };
+    },
+    setup() {
+        const { t, locale } = useI18n({
+            inheritLocale: true,
+            useScope: "local"
+        });
+        return { t, locale };
     },
     async created() {
         const response = await axios.get(location.origin + "/poetry.txt");
@@ -104,3 +112,14 @@ export default defineComponent({
     display: flex;
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "comments": "Comments",
+  },
+  "pl": {
+    "comments": "Komentarze"
+  }
+}
+</i18n>

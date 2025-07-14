@@ -1,0 +1,14 @@
+{
+    "info": {
+        "title": "Info",
+        "description": "Home page."
+    },
+    "poetry": {
+        "title": "Poetry",
+        "description": "My heartfelt poems."
+    },
+    "mgw": {
+        "title": "MGW design prop",
+        "description": "MageGuildWars PBF new app design proposition."
+    }
+}

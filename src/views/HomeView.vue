@@ -1,17 +1,17 @@
 <template>
-  <BorderBox title="Info">
+  <BorderBox :title="$t('info.title')" class="home-view">
     <img :src="img" alt="info_image" class="info-img">
-    <p>{{ info }}</p>
-    <h2>Subpages</h2>
+    <p>{{ t('info.text') }}</p>
+    <h2>{{ t('subpages') }}</h2>
     <ul>
       <li v-for="page in pages" :key="page.url">
-        <router-link v-if="!page.isExternal" :to="page.url">{{ page.title }}</router-link>
-        <a v-else :href="page.url">{{ page.title }}</a>
-        <div class="tooltip">{{ page.info }}</div>
+        <router-link v-if="!page.isExternal" :to="page.url">{{ $t(page.key + ".title") }}</router-link>
+        <a v-else :href="page.url">{{ $t(page.key + ".title") }}</a>
+        <div class="tooltip">{{ $t(page.key + ".description") }}</div>
       </li>
     </ul>
 
-    <h2>Socials</h2>
+    <h2>{{ t('socials') }}</h2>
     <div class="socials">
       <div class="social" v-for="social in socials" :key="social.url">
         <a :href="social.url"><img :src="social.icon"></a>
@@ -27,6 +27,7 @@
 import { defineComponent } from "vue";
 import axios from "axios";
 import BorderBox from "@/components/BorderBox.vue";
+import { useI18n } from "vue-i18n";
 
 
 export default defineComponent({
@@ -36,16 +37,21 @@ export default defineComponent({
   },
   data() {
     return {
-        pages: [{url: "", title: "", info: ""}],
-        info: "",
+        pages: [{url: "", key: "", icon: "", isExternal: false}],
         img: "/info_image",
         socials: [{url: "", icon: "", name: ""}],
     };
   },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: "local"
+    });
+    return { t, locale };
+  },
   async created() {
     const response = await axios.get(location.origin + "/info.json");
     this.pages = response.data.pages;
-    this.info = response.data.info;
     this.img = response.data.img;
     this.socials = response.data.socials;
   },
@@ -109,3 +115,18 @@ li:hover {
   }
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "info.text": "This is a page with subpages.",
+    "subpages": "Subpages",
+    "socials": "Socials"
+  },
+  "pl": {
+    "info.text": "To jest strona z podstronami.",
+    "subpages": "Podstrony",
+    "socials": "Zobacz również"
+  }
+}
+</i18n>

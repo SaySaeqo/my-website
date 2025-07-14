@@ -5,12 +5,12 @@
         <router-link v-if="!page.isExternal" 
           :to="page.url" :style="onBigScreen ? 'display:flex;' : ''">
           <img :src="page.icon">
-          <p>{{ page.title }}</p>
+          <p>{{ $t(page.key + '.title') }}</p>
         </router-link>
         <a v-else 
           :href="page.url" :style="onBigScreen ? 'display:flex;' : ''">
           <img :src="page.icon">
-          <p>{{ page.title }}</p>
+          <p>{{ $t(page.key + '.title') }}</p>
         </a>
       </div>
     </nav>
@@ -25,7 +25,7 @@ export default defineComponent({
   name: "NavigationBar",
   data() {
     return {
-        pages: [{url: "", title: "", info: "", icon: "", isExternal: false}],
+        pages: [{url: "", key: "", icon: "", isExternal: false}],
         info: "",
         img: "/info_image",
         socials: [{url: "", icon: ""}],
@@ -111,6 +111,5 @@ nav.open {
     display: flex;
   }
 }
-  
 </style>
   

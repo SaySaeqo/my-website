@@ -1,26 +1,22 @@
 {
     "pages": [
         {
-            "title": "Info",
+            "key": "info",
             "url": "/",
-            "info": "Home page.",
             "icon": "/icons/example.png"
         },
         {
-            "title": "MGW design prop",
+            "key": "mgw",
             "url": "/mgw-design",
-            "info": "MageGuildWars pbf new app design proposition.",
             "icon": "/icons/mgw-logo-mono.png",
             "isExternal": true
         },
         {
-            "title": "Wiersze",
+            "key": "poetry",
             "url": "/poetry",
-            "info": "Moje wiersze od serca.",
             "icon": "/icons/poetry.svg"
         }
     ],
-    "info": "This is a page with subpages.",
     "img": "/icons/avatar.png",
     "socials": [
         {

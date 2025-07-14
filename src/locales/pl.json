@@ -1,0 +1,14 @@
+{
+    "info": {
+        "title": "O mnie",
+        "description": "Strona główna."
+    },
+    "poetry": {
+        "title": "Poezja",
+        "description": "Moje wiersze od serca."
+    },
+    "mgw": {
+        "title": "MGW design prop",
+        "description": "MageGuildWars PBF - jak mniej więcej ma wyglądać nowa aplikacja."
+    }
+}
