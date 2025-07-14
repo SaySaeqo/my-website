@@ -15,6 +15,12 @@
             "key": "poetry",
             "url": "/poetry",
             "icon": "/icons/poetry.svg"
+        },
+        {
+            "key": "pythonanywhere",
+            "url": "/pythonanywhere",
+            "icon": "/icons/pythonanywhere.png",
+            "isExternal": true
         }
     ],
     "img": "/icons/avatar.png",

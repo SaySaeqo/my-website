@@ -10,5 +10,9 @@
     "mgw": {
         "title": "MGW design prop",
         "description": "MageGuildWars PBF - jak mniej więcej ma wyglądać nowa aplikacja."
+    },
+    "pythonanywhere": {
+        "title": "PythonAnywhere",
+        "description": "Moja strona na PythonAnywhere."
     }
 }

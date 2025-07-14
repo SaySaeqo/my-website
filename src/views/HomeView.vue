@@ -6,7 +6,11 @@
     <ul>
       <li v-for="page in pages" :key="page.url">
         <router-link v-if="!page.isExternal" :to="page.url">{{ $t(page.key + ".title") }}</router-link>
-        <a v-else :href="page.url">{{ $t(page.key + ".title") }}</a>
+        <a v-else :href="page.url">
+          {{ $t(page.key + ".title") }}
+          <span v-if="page.key==='pythonanywhere' && pythonAnywhereActive">🟢</span>
+          <span v-else-if="page.key==='pythonanywhere' && !pythonAnywhereActive">🔴</span>
+        </a>
         <div class="tooltip">{{ $t(page.key + ".description") }}</div>
       </li>
     </ul>
@@ -28,6 +32,7 @@ import { defineComponent } from "vue";
 import axios from "axios";
 import BorderBox from "@/components/BorderBox.vue";
 import { useI18n } from "vue-i18n";
+import { isPythonAnywhereActive } from "@/common";
 
 
 export default defineComponent({
@@ -40,6 +45,7 @@ export default defineComponent({
         pages: [{url: "", key: "", icon: "", isExternal: false}],
         img: "/info_image",
         socials: [{url: "", icon: "", name: ""}],
+        pythonAnywhereActive: false,
     };
   },
   setup() {
@@ -54,6 +60,7 @@ export default defineComponent({
     this.pages = response.data.pages;
     this.img = response.data.img;
     this.socials = response.data.socials;
+    this.pythonAnywhereActive = await isPythonAnywhereActive();
   },
 });
 </script>

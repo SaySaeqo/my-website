@@ -10,7 +10,11 @@
         <a v-else 
           :href="page.url" :style="onBigScreen ? 'display:flex;' : ''">
           <img :src="page.icon">
-          <p>{{ $t(page.key + '.title') }}</p>
+          <p>
+            {{ $t(page.key + '.title') }}
+            <span v-if="page.key==='pythonanywhere' && pythonAnywhereActive">🟢</span>
+            <span v-else-if="page.key==='pythonanywhere' && !pythonAnywhereActive">🔴</span>
+          </p>
         </a>
       </div>
     </nav>
@@ -19,6 +23,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "axios";
+import { isPythonAnywhereActive } from "@/common";
 
 
 export default defineComponent({
@@ -31,6 +36,7 @@ export default defineComponent({
         socials: [{url: "", icon: ""}],
         isOpen: false,
         onBigScreen: false,
+        pythonAnywhereActive: false,
     };
   },
   async created() {
@@ -39,6 +45,7 @@ export default defineComponent({
     this.info = response.data.info;
     this.img = response.data.img;
     this.socials = response.data.socials;
+    this.pythonAnywhereActive = await isPythonAnywhereActive();
   },
 
   mounted() {
