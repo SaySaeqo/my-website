@@ -8,7 +8,10 @@ export default defineConfig({
   plugins: [
     vue(),
     VueI18nPlugin({
-      include: [fileURLToPath(new URL("./src/locales/**", import.meta.url))]
+      include: [fileURLToPath(new URL("./src/locales/**", import.meta.url))],
+      // Disable warnings for HTML messages
+      strictMessage: false,
+      
     })
   ],
   resolve: {

@@ -1,7 +1,7 @@
 <template>
   <BorderBox :title="$t('info.title')" class="home-view">
     <img :src="img" alt="info_image" class="info-img">
-    <p>{{ t('info.text') }}</p>
+    <p v-html="t('info.text')"></p>
     <h2>{{ t('subpages') }}</h2>
     <ul>
       <li v-for="page in pages" :key="page.url">
@@ -45,7 +45,7 @@ export default defineComponent({
   setup() {
     const { t, locale } = useI18n({
       inheritLocale: true,
-      useScope: "local"
+      useScope: "local",
     });
     return { t, locale };
   },
@@ -114,17 +114,30 @@ li:hover {
     }
   }
 }
+
+.home-view {
+  width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .home-view p {
+    padding: 0 4em;
+  }
+  .home-view {
+    width: 800px;
+  }
+}
 </style>
 
 <i18n>
 {
   "en": {
-    "info.text": "This is a page with subpages.",
+    "info.text": "Hi. I usually go by the nickname <strong>SaySaeqo</strong>. I graduated from the Computer Science program at Gdańsk University of Technology. Currently, I am studying Space Technologies at 4 different universities (mainly at Gdańsk University of Technology XD). I mainly focus on drawing and programming. Recently, I have been programming mostly in Python or JS. I draw with the intention of creating comics. I also have several years of experience writing on PBF sites, which I still want to return to. This site is meant to be a collection of my existence on the internet. You will find here primarily links to external sites, but also to my projects and more. 🙂 If you have any questions, feel free to write: <a href='mailto:saysaeqo{'@'}gmail.com'>saysaeqo{'@'}gmail.com</a>.<br /> <i>~Last modified 2025.07.14",
     "subpages": "Subpages",
     "socials": "Socials"
   },
   "pl": {
-    "info.text": "To jest strona z podstronami.",
+    "info.text": "Cześć. Zazwyczaj posługuję się pseudonimem <strong>SaySaeqo</strong>. Skończyłem studia informatyczne na Politechnice Gdańskiej. Obecnie studiuję Technologie Kosmiczne na 4 różnych uczelniach (ale głównie na Politechnice Gdańskiej XD). Głównie zajmuję się rysowaniem i programowaniem. Ostatnio najczęściej programuję w Pythonie lub JS. Rysuję z myślą o tworzeniu komiksów. Mam również kilkuletnie doświadczenie w pisaniu na stronach typu PBF, do których jeszcze chcę wrócić. Ta strona ma być zbiorem mojej egzystencji w internecie. Znajdziesz tutaj przede wszystkim odnośniki do zewnętrznych stron, ale również do moich projektów i inne. 🙂 W razie pytań napisz: <a href='mailto:saysaeqo{'@'}gmail.com'>saysaeqo{'@'}gmail.com</a>.<br /> <i>~Ostatnio zmodyfikowano 2025.07.14",
     "subpages": "Podstrony",
     "socials": "Zobacz również"
   }
