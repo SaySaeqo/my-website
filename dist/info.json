@@ -36,24 +36,29 @@
             "icon": "/icons/deviantart.png"
         },
         {
-            "name": "Pinterest",
-            "url": "https://www.pinterest.com/saysaeqo/",
-            "icon": "/icons/pinterest.png"
-        },
-        {
             "name": "GitHub",
             "url": "https://www.github.com/SaySaeqo/",
             "icon": "/icons/github.png"
         },
         {
-            "name": "MyAnimeList",
-            "url": "https://myanimelist.net/animelist/SaySaeqo?status=2&order=4&order2=0",
-            "icon": "/icons/mal.png"
+            "name": "Chess.com",
+            "url": "https://www.chess.com/member/saysaeqo",
+            "icon": "/icons/chess.png"
         },
         {
             "name": "Webkomiksy",
             "url": "https://www.webkomiksy.pl/profil/saysaeqo",
             "icon": "/icons/webkomiksy.png"
+        },
+        {
+            "name": "Pinterest",
+            "url": "https://www.pinterest.com/saysaeqo/",
+            "icon": "/icons/pinterest.png"
+        },
+        {
+            "name": "MyAnimeList",
+            "url": "https://myanimelist.net/animelist/SaySaeqo?status=2&order=4&order2=0",
+            "icon": "/icons/mal.png"
         }
     ]
 }
