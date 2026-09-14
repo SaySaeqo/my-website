@@ -21,11 +21,5 @@ export default defineConfig({
         strictMessage: false
       })
     ],
-    resolve: {
-      alias: {
-        '@assets': path.resolve(import.meta.url, './src/assets'),
-        '@': path.resolve(import.meta.url, './src'),
-      }
-    }
   }
 });

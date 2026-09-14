@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "@astrojs/vue": "^7.0.2",
     "@programic/vue3-tooltip": "^1.0.0",
     "astro": "^7.3.2",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@intlify/unplugin-vue-i18n": "^11.2.5",
+    "@types/node": "^26.5.1",
     "@typescript-eslint/eslint-plugin": "^8.70.0",
     "@typescript-eslint/parser": "^8.70.0",
     "@vue/eslint-config-typescript": "^14.9.0",
