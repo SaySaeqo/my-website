@@ -1,0 +1,29 @@
+---
+import Layout from "@layouts/Layout.astro"
+import pl from "@i18n/pl.json"
+import en from "@i18n/en.json"
+
+
+export const prerender = true;
+export function getStaticPaths() {
+  const translations = { en, pl };
+  return Object.keys(translations).map((lang) => ({
+    params: { lang },
+    props: {
+      messages: translations[lang as keyof typeof translations],
+    },
+  }));
+}
+
+interface Props {
+  messages: Record<string, string>;
+}
+
+const { messages } = Astro.props;
+
+const t = (key: string) => messages[key] ?? key;
+---
+
+<Layout title={t("page.title")}>
+  {t("page.heading")}
+</Layout>

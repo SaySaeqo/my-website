@@ -6,6 +6,13 @@ import vue from '@astrojs/vue';
 
 // https://astro.build/config
 export default defineConfig({
+   i18n: {
+    locales: ["en", "pl"],
+    defaultLocale: "pl",
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
   integrations: [vue()],
   vite: {
     plugins: [
@@ -16,7 +23,8 @@ export default defineConfig({
     ],
     resolve: {
       alias: {
-        '@alias': path.resolve(import.meta.url, './src/assets')
+        '@assets': path.resolve(import.meta.url, './src/assets'),
+        '@': path.resolve(import.meta.url, './src'),
       }
     }
   }
