@@ -27,6 +27,7 @@ import kritaGallery4 from "@assets/asprogrammer/project-krita-plugin-gallery-4.w
 
 import kritaIcon from "@assets/krita.svg";
 
+import "./styles.scss";
 
 export const prerender = true;
 export function getStaticPaths() {
@@ -47,37 +48,36 @@ const { messages } = Astro.props;
 
 const t = (key: string) => messages[key] ?? key;
 
+const { lang } = Astro.params;
 ---
 
 <Layout title={t("page.title")}>
   <header>
-    <a href="/"><i class="fa-solid fa-arrow-left"></i></a>
+    <a href="/">
+      <i class="fa-solid fa-arrow-left"></i>
+    </a>
     <h1>{t("hero_title")}</h1>
   </header>
 
-  <article id="about-me">
-    <div class="img-box">
-      <Image src={profilePhoto} alt={t("profile_photo_alt")} />
-    </div>
-    <div class="text-box">
-      <h2>{t("about_greeting")}</h2>
-      <p>{t("about_description")}</p>
-      <div class="skills">
-        <section>
+  <main>
+    <article id="about-me">
+      <div class="img-box">
+        <Image src={profilePhoto} alt={t("profile_photo_alt")} />
+      </div>
+      <div class="text-box">
+        <h2>{t("about_greeting")}</h2>
+        <p>{t("about_description")}</p>
+        <div class="skills">
           <h3>{t("skills_favorites")}</h3>
           <ul>
             <li>Python</li>
             <li>JavaScript</li>
           </ul>
-        </section>
-        <section>
           <h3>{t("skills_most_experience")}</h3>
           <ul>
             <li>Java</li>
             <li>Gradle</li>
           </ul>
-        </section>
-        <section>
           <h3>{t("skills_worked_professionally")}</h3>
           <ul>
             <li>Grails</li>
@@ -89,8 +89,6 @@ const t = (key: string) => messages[key] ?? key;
             <li>Hibernate</li>
             <li>JPA</li>
           </ul>
-        </section>
-        <section>
           <h3>{t("skills_hobby")}</h3>
           <ul>
             <li>Hugo</li>
@@ -99,246 +97,305 @@ const t = (key: string) => messages[key] ?? key;
             <li>VirtualBox</li>
             <li>Wireshark</li>
           </ul>
-        </section>
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article id="best-projects">
-    <hgroup>
-      <h2>{t("section_best_projects")}</h2>
-      <p>{t("section_best_projects_description")}</p>
-    </hgroup>
-    <div class="section-box">
-    <section>
-      <h3>{t("satellite_title")}</h3>
-      <p>{t("satellite_subtitle")}</p>
-      <a href="#satellite-model"><i class="fa-solid fa-arrow-right"></i></a>
-    </section>
-     <section>
-      <h3>{t("snake_title")}</h3>
-      <p>{t("snake_subtitle")}</p>
-      <a href="#pygame-snake"><i class="fa-solid fa-arrow-right"></i></a>
-    </section>
-     <section>
-      <h3>{t("cprofile_title")}</h3>
-      <p>{t("cprofile_subtitle")}</p>
-      <a href="cprofile-vsc"><i class="fa-solid fa-arrow-right"></i></a>
-    </section>
-     <section>
-      <h3>{t("krita_title")}</h3>
-      <p>{t("krita_subtitle")}</p>
-      <a href="krita-plugin"><i class="fa-solid fa-arrow-right"></i></a>
-    </section>
-    </div>
-  </article>
+    <article id="best-projects">
+      <hgroup>
+        <h2>{t("section_best_projects")}</h2>
+        <p>{t("section_best_projects_description")}</p>
+      </hgroup>
+      <div class="section-box">
+        <a href="#satellite-model">
+          <h3>{t("satellite_title")}</h3>
+          <p>{t("satellite_subtitle")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#pygame-snake">
+          <h3>{t("snake_title")}</h3>
+          <p>{t("snake_subtitle")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#cprofile-vsc">
+          <h3>{t("cprofile_title")}</h3>
+          <p>{t("cprofile_subtitle")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#krita-plugin">
+          <h3>{t("krita_title")}</h3>
+          <p>{t("krita_subtitle")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
 
-  <article id="websites">
-    <hgroup>
-      <h2>{t("section_created_websites")}</h2>
-      <p>{t("section_created_websites_description")}</p>
-    </hgroup>
-    <div class="section-box">
-      <section>
-        <h3>{t("website_perfektrp_title")}</h3>
-        <p>{t("website_perfektrp_description")}</p>
-        <Image src={perfektRpThumbnail} alt={t("website_perfektrp_thumbnail_alt")} />
-      </section>
-      <section>
-        <h3>{t("website_slubnabydgoszcz_title")}</h3>
-        <p>{t("website_slubnabydgoszcz_description")}</p>
-        <Image src={slubnaBydgoszczThumbnail} alt={t("website_slubnabydgoszcz_thumbnail_alt")} />
-      </section>
-    </div>
-  </article>
+    <article id="websites">
+      <hgroup>
+        <h2>{t("section_created_websites")}</h2>
+        <p>{t("section_created_websites_description")}</p>
+      </hgroup>
+      <div class="section-box">
+        <a href="https://perfektrp.pl">
+          <h3>{t("website_perfektrp_title")}</h3>
+          <p>{t("website_perfektrp_description")}</p>
+          <Image
+            src={perfektRpThumbnail}
+            alt={t("website_perfektrp_thumbnail_alt")}
+          />
+        </a>
+        <a href="https://slubnabydgoszcz.pl">
+          <h3>{t("website_slubnabydgoszcz_title")}</h3>
+          <p>{t("website_slubnabydgoszcz_description")}</p>
+          <Image
+            src={slubnaBydgoszczThumbnail}
+            alt={t("website_slubnabydgoszcz_thumbnail_alt")}
+          />
+        </a>
+      </div>
+    </article>
 
-  <article id="satellite-model" class="project">
-    <h2>{t("satellite_title")}</h2>
-    <div class="description">
-      <p>{t("satellite_description_p1")}</p>
-      <p>{t("satellite_description_p2")}</p>
-      <p>{t("satellite_description_p3")}</p>
-    </div>
-    <div class="parameters">
-      <div class="simple">
-        <section>
+    <article id="satellite-model" class="project">
+      <h2>{t("satellite_title")}</h2>
+      <div class="description">
+        <p>{t("satellite_description_p1")}</p>
+        <p>{t("satellite_description_p2")}</p>
+        <p>{t("satellite_description_p3")}</p>
+      </div>
+      <div class="parameters">
+        <div class="simple">
           <h3>{t("project_label_status")}</h3>
           <p>{t("project_status_completed")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_app_type")}</h3>
           <p>{t("satellite_app_type")}</p>
-        </section>
-      </div>
-      <div class="technology">
-        <section>
+        </div>
+        <div class="technology">
           <h3>{t("project_label_technologies")}</h3>
           <p>{t("satellite_technologies")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_languages")}</h3>
           <p>{t("satellite_languages")}</p>
+        </div>
+        <section class="features">
+          <h3>{t("project_label_features")}</h3>
+          <ul>
+            <li>{t("satellite_feature_1")}</li>
+            <li>{t("satellite_feature_2")}</li>
+            <li>{t("satellite_feature_3")}</li>
+            <li>{t("satellite_feature_4")}</li>
+          </ul>
         </section>
       </div>
-      <section class="features">
-        <h3>{t("project_label_features")}</h3>
-        <ul>
-          <li>{t("satellite_feature_1")}</li>
-          <li>{t("satellite_feature_2")}</li>
-          <li>{t("satellite_feature_3")}</li>
-          <li>{t("satellite_feature_4")}</li>
-        </ul>
-      </section>
-    </div>
-    <div class="img-gallery">
-      <Image src={satelliteGallery1} alt={t("satellite_gallery_1_alt")} />
-      <Image src={satelliteGallery2} alt={t("satellite_gallery_2_alt")} />
-      <Image src={satelliteGallery3} alt={t("satellite_gallery_3_alt")} />
-    </div>
-    <footer class="buttons">
-      <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">{t("button_view_source")}</a>
-    </footer>
-  </article>
+      <div class="img-gallery">
+        <Image src={satelliteGallery1} alt={t("satellite_gallery_1_alt")} />
+        <Image src={satelliteGallery2} alt={t("satellite_gallery_2_alt")} />
+        <Image src={satelliteGallery3} alt={t("satellite_gallery_3_alt")} />
+      </div>
+      <footer class="buttons">
+        <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">
+          <i class="fa-brands fa-github"></i>
+          <p>{t("button_view_source")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </footer>
+    </article>
 
-  <article id="pygame-snake" class="project">
-    <h2>{t("snake_title")}</h2>
-    <div class="description">
-      <p>{t("snake_description_p1")}</p>
-      <p>{t("snake_description_p2")}</p>
-    </div>
-    <div class="parameters">
-      <div class="simple">
-        <section>
+    <article id="pygame-snake" class="project">
+      <h2>{t("snake_title")}</h2>
+      <div class="description">
+        <p>{t("snake_description_p1")}</p>
+        <p>{t("snake_description_p2")}</p>
+      </div>
+      <div class="parameters">
+        <div class="simple">
           <h3>{t("project_label_status")}</h3>
-          <p>{t("project_status_completed")}</p>
-        </section>
-        <section>
+          <p>{t("project_status_further_development_planned")}</p>
           <h3>{t("project_label_app_type")}</h3>
           <p>{t("snake_app_type")}</p>
-        </section>
-      </div>
-      <div class="technology">
-        <section>
+        </div>
+        <div class="technology">
           <h3>{t("project_label_technologies")}</h3>
           <p>{t("snake_technologies")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_languages")}</h3>
           <p>{t("snake_languages")}</p>
+        </div>
+        <section class="features">
+          <h3>{t("project_label_features")}</h3>
+          <ul>
+            <li>{t("snake_feature_1")}</li>
+            <li>{t("snake_feature_2")}</li>
+            <li>{t("snake_feature_3")}</li>
+            <li>{t("snake_feature_4")}</li>
+          </ul>
         </section>
       </div>
-      <section class="features">
-        <h3>{t("project_label_features")}</h3>
-        <ul>
-          <li>{t("snake_feature_1")}</li>
-          <li>{t("snake_feature_2")}</li>
-          <li>{t("snake_feature_3")}</li>
-          <li>{t("snake_feature_4")}</li>
-        </ul>
-      </section>
-    </div>
-    <div class="img-gallery">
-      <Image src={snakeGallery1} alt={t("snake_gallery_1_alt")} />
-      <Image src={snakeGallery2} alt={t("snake_gallery_2_alt")} />
-      <Image src={snakeGallery3} alt={t("snake_gallery_3_alt")} />
-      <Image src={snakeGallery4} alt={t("snake_gallery_4_alt")} />
-    </div>
-    <footer class="buttons">
-      <a href="https://github.com/SaySaeqo/pygame-snake">{t("button_view_source")}</a>
-    </footer>
-  </article>
+      <div class="img-gallery">
+        <Image src={snakeGallery1} alt={t("snake_gallery_1_alt")} />
+        <Image src={snakeGallery2} alt={t("snake_gallery_2_alt")} />
+        <Image src={snakeGallery3} alt={t("snake_gallery_3_alt")} />
+        <Image src={snakeGallery4} alt={t("snake_gallery_4_alt")} />
+      </div>
+      <footer class="buttons">
+        <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">
+          <i class="fa-brands fa-github"></i>
+          <p>{t("button_view_source")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </footer>
+    </article>
 
-  <article id="cprofile-vsc" class="project">
-    <h2>{t("cprofile_title")}</h2>
-    <div class="description">
-      <p>{t("cprofile_description_p1")}</p>
-      <p>{t("cprofile_description_p2")}</p>
-    </div>
-    <div class="parameters">
-      <div class="simple">
-        <section>
+    <article id="cprofile-vsc" class="project">
+      <h2>{t("cprofile_title")}</h2>
+      <div class="description">
+        <p>{t("cprofile_description_p1")}</p>
+        <p>{t("cprofile_description_p2")}</p>
+      </div>
+      <div class="parameters">
+        <div class="simple">
           <h3>{t("project_label_status")}</h3>
           <p>{t("project_status_completed")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_app_type")}</h3>
           <p>{t("cprofile_app_type")}</p>
-        </section>
-      </div>
-      <div class="technology">
-        <section>
+        </div>
+        <div class="technology">
           <h3>{t("project_label_technologies")}</h3>
           <p>{t("cprofile_technologies")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_languages")}</h3>
           <p>{t("cprofile_languages")}</p>
+        </div>
+        <section class="features">
+          <h3>{t("project_label_features")}</h3>
+          <ul>
+            <li>{t("cprofile_feature_1")}</li>
+            <li>{t("cprofile_feature_2")}</li>
+          </ul>
         </section>
       </div>
-      <section class="features">
-        <h3>{t("project_label_features")}</h3>
-        <ul>
-          <li>{t("cprofile_feature_1")}</li>
-          <li>{t("cprofile_feature_2")}</li>
-        </ul>
-      </section>
-    </div>
-    <div class="img-gallery">
-      <Image src={cprofileGallery} alt={t("cprofile_gallery_1_alt")} />
-    </div>
-    <footer class="buttons">
-      <a href="https://marketplace.visualstudio.com/items?itemName=saysaeqo.python-cprofile">{t("button_visit_product")}</a>
-      <a href="https://github.com/SaySaeqo/python-cprofile">{t("button_view_source")}</a>
-    </footer>
-  </article>
+      <div class="img-gallery">
+        <Image src={cprofileGallery} alt={t("cprofile_gallery_1_alt")} />
+      </div>
+      <footer class="buttons">
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=saysaeqo.python-cprofile"
+        >
+          <i class="fa-brands fa-windows"></i>
+          <p>{t("button_visit_product")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">
+          <i class="fa-brands fa-github"></i>
+          <p>{t("button_view_source")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </footer>
+    </article>
 
-  <article id="krita-plugin" class="project">
-    <h2>{t("krita_title")}</h2>
-    <div class="description">
-      <p>{t("krita_description_p1")}</p>
-      <p>{t("krita_description_p2")}</p>
-      <p>{t("krita_description_p3")}</p>
-    </div>
-    <div class="parameters">
-      <div class="simple">
-        <section>
+    <article id="krita-plugin" class="project">
+      <h2>{t("krita_title")}</h2>
+      <div class="description">
+        <p>{t("krita_description_p1")}</p>
+        <p>{t("krita_description_p2")}</p>
+        <p>{t("krita_description_p3")}</p>
+      </div>
+      <div class="parameters">
+        <div class="simple">
           <h3>{t("project_label_status")}</h3>
           <p>{t("project_status_completed")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_app_type")}</h3>
           <p>{t("krita_app_type")}</p>
-        </section>
-      </div>
-      <div class="technology">
-        <section>
+        </div>
+        <div class="technology">
           <h3>{t("project_label_technologies")}</h3>
           <p>{t("krita_technologies")}</p>
-        </section>
-        <section>
           <h3>{t("project_label_languages")}</h3>
           <p>{t("krita_languages")}</p>
+        </div>
+        <section class="features">
+          <h3>{t("project_label_features")}</h3>
+          <ul>
+            <li>{t("krita_feature_1")}</li>
+            <li>{t("krita_feature_2")}</li>
+            <li>{t("krita_feature_3")}</li>
+          </ul>
         </section>
       </div>
-      <section class="features">
-        <h3>{t("project_label_features")}</h3>
-        <ul>
-          <li>{t("krita_feature_1")}</li>
-          <li>{t("krita_feature_2")}</li>
-          <li>{t("krita_feature_3")}</li>
-        </ul>
-      </section>
-    </div>
-    <div class="img-gallery">
-      <Image src={kritaGallery1} alt={t("krita_gallery_1_alt")} />
-      <Image src={kritaGallery2} alt={t("krita_gallery_2_alt")} />
-      <Image src={kritaGallery3} alt={t("krita_gallery_3_alt")} />
-      <Image src={kritaGallery4} alt={t("krita_gallery_4_alt")} />
-    </div>
-    <footer class="buttons">
-      <a href="https://krita-artists.org/t/sketchbook-like-exports-organizer-extension/106387">{t("button_visit_product")}</a>
-      <a href="https://github.com/SaySaeqo/krita-scripts">{t("button_view_source")}</a>
-    </footer>
-  </article>
+      <div class="img-gallery">
+        <Image src={kritaGallery1} alt={t("krita_gallery_1_alt")} />
+        <Image src={kritaGallery2} alt={t("krita_gallery_2_alt")} />
+        <Image src={kritaGallery3} alt={t("krita_gallery_3_alt")} />
+        <Image src={kritaGallery4} alt={t("krita_gallery_4_alt")} />
+      </div>
+      <footer class="buttons">
+        <a
+          href="https://krita-artists.org/t/sketchbook-like-exports-organizer-extension/106387"
+        >
+          <Image src={kritaIcon} alt="Paintbrush over a circular swirl." />
+          <p>{t("button_visit_product")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">
+          <i class="fa-brands fa-github"></i>
+          <p>{t("button_view_source")}</p>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </footer>
+    </article>
+  </main>
+  <footer>
+    <select
+      name="language"
+      id="language"
+      onchange="location.href=`/${event.target.value}/asprogrammer`"
+    >
+      <option value="pl" selected={lang === "pl"}>pl</option>
+      <option value="en" selected={lang === "en"}>en</option>
+    </select>
+    <p class="copyright">©2026 SaySaeqo</p>
+    <address>t.piwowski@hotmail.com</address>
+    <i class="fa-brands fa-github"></i>
+    <i class="fa-brands fa-linkedin"></i>
+  </footer>
+  <button
+    aria-label="Scroll to top"
+    id="back-to-top"
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+  >
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
+  <script>
+    // Adjust #best-project h3 sizes to one size
+    function equalizeProjectHeadingColumns() {
+      const sections = document.querySelectorAll<HTMLElement>(
+        "#best-projects .section-box > a",
+      );
+
+      const headings = [...sections].map((section) =>
+        section.querySelector<HTMLElement>("h3"),
+      );
+      const widestHeading = Math.max(
+        ...headings.map((h) => h.getBoundingClientRect().width),
+      );
+      sections.forEach((section) => {
+        section.style.gridTemplateColumns = `${widestHeading}px auto max-content`;
+      });
+    }
+
+    window.onload = equalizeProjectHeadingColumns;
+
+    // Adjust opacity of back-to-top button based on body scroll
+    const backToTopButton = document.querySelector<HTMLElement>("#back-to-top");
+
+    function updateBackToTopOpacity() {
+      if (!backToTopButton) return;
+
+      const isScrolled = window.scrollY > 200;
+      backToTopButton.style.opacity = isScrolled ? "1" : "0";
+      backToTopButton.style.pointerEvents = isScrolled ? "auto" : "none";
+    }
+
+    window.addEventListener("scroll", updateBackToTopOpacity, {
+      passive: true,
+    });
+    updateBackToTopOpacity();
+  </script>
 </Layout>
