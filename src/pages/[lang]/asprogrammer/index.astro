@@ -51,7 +51,7 @@ const t = (key: string) => messages[key] ?? key;
 const { lang } = Astro.params;
 ---
 
-<Layout title={t("page.title")}>
+<Layout title={t("page_title")} description={t("page_description")} lang={lang} image={profilePhoto.src}>
   <header>
     <a href="/">
       <i class="fa-solid fa-arrow-left"></i>
