@@ -17,6 +17,7 @@
     "@programic/vue3-tooltip": "^1.0.0",
     "astro": "^7.3.2",
     "axios": "^1.20.0",
+    "lightbox3": "^1.4.0",
     "vue": "^3.5.42",
     "vue-cusdis": "^2.1.1",
     "vue-i18n": "^11.4.10",

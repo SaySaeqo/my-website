@@ -6,12 +6,15 @@ import en from "@i18n/en.json";
 
 import { Image } from "astro:assets";
 import profilePhoto from "@assets/asprogrammer/profile-photo.webp";
+import profilePhoto2 from "@assets/asprogrammer/profile-photo2.webp";
 import perfektRpThumbnail from "@assets/asprogrammer/card-perfektrp-thumbnail.webp";
 import slubnaBydgoszczThumbnail from "@assets/asprogrammer/card-slubnabydgoszcz-thumbnail.webp";
 
 import satelliteGallery1 from "@assets/asprogrammer/project-satellite-gallery-1.webp";
 import satelliteGallery2 from "@assets/asprogrammer/project-satellite-gallery-2.webp";
 import satelliteGallery3 from "@assets/asprogrammer/project-satellite-gallery-3.webp";
+import satelliteVideoMp4 from "@assets/asprogrammer/project-satellite-video.mp4";
+import satelliteVideoWebm from "@assets/asprogrammer/project-satellite-video.webm";
 
 import snakeGallery1 from "@assets/asprogrammer/project-pygame-snake-gallery-1.webp";
 import snakeGallery2 from "@assets/asprogrammer/project-pygame-snake-gallery-2.webp";
@@ -51,9 +54,14 @@ const t = (key: string) => messages[key] ?? key;
 const { lang } = Astro.params;
 ---
 
-<Layout title={t("page_title")} description={t("page_description")} lang={lang} image={profilePhoto.src}>
+<Layout
+  title={t("page_title")}
+  description={t("page_description")}
+  lang={lang}
+  image={profilePhoto.src}
+>
   <header>
-    <a href="/">
+    <a href="/" aria-label="return to main page">
       <i class="fa-solid fa-arrow-left"></i>
     </a>
     <h1>{t("hero_title")}</h1>
@@ -61,8 +69,14 @@ const { lang } = Astro.params;
 
   <main>
     <article id="about-me">
-      <div class="img-box">
-        <Image src={profilePhoto} alt={t("profile_photo_alt")} />
+      <div
+        class="img-box"
+        data-profile-photos={JSON.stringify([
+          profilePhoto.src,
+          profilePhoto2.src,
+        ])}
+      >
+        <Image src={profilePhoto} alt={t("profile_photo_alt")} priority />
       </div>
       <div class="text-box">
         <h2>{t("about_greeting")}</h2>
@@ -186,9 +200,34 @@ const { lang } = Astro.params;
         </section>
       </div>
       <div class="img-gallery">
-        <Image src={satelliteGallery1} alt={t("satellite_gallery_1_alt")} />
-        <Image src={satelliteGallery2} alt={t("satellite_gallery_2_alt")} />
-        <Image src={satelliteGallery3} alt={t("satellite_gallery_3_alt")} />
+        <a
+          href={satelliteVideoMp4}
+          data-webm={satelliteVideoWebm}
+          data-videobox
+          data-caption={t("satellite_gallery_1_caption")}
+          ><i class="fa-solid fa-circle-play"></i><Image
+            src={satelliteGallery1}
+            alt={t("satellite_gallery_1_alt")}
+          />
+        </a>
+        <a
+          href={satelliteGallery2.src}
+          data-lightbox="satellite"
+          data-caption={t("satellite_gallery_2_caption")}
+          ><Image
+            src={satelliteGallery2}
+            alt={t("satellite_gallery_2_alt")}
+          /></a
+        >
+        <a
+          href={satelliteGallery3.src}
+          data-lightbox="satellite"
+          data-caption={t("satellite_gallery_3_caption")}
+          ><Image
+            src={satelliteGallery3}
+            alt={t("satellite_gallery_3_alt")}
+          /></a
+        >
       </div>
       <footer class="buttons">
         <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">
@@ -229,10 +268,30 @@ const { lang } = Astro.params;
         </section>
       </div>
       <div class="img-gallery">
-        <Image src={snakeGallery1} alt={t("snake_gallery_1_alt")} />
-        <Image src={snakeGallery2} alt={t("snake_gallery_2_alt")} />
-        <Image src={snakeGallery3} alt={t("snake_gallery_3_alt")} />
-        <Image src={snakeGallery4} alt={t("snake_gallery_4_alt")} />
+        <a
+          href={snakeGallery1.src}
+          data-lightbox="snake"
+          data-caption={t("snake_gallery_1_caption")}
+          ><Image src={snakeGallery1} alt={t("snake_gallery_1_alt")} /></a
+        >
+        <a
+          href={snakeGallery2.src}
+          data-lightbox="snake"
+          data-caption={t("snake_gallery_2_caption")}
+          ><Image src={snakeGallery2} alt={t("snake_gallery_2_alt")} /></a
+        >
+        <a
+          href={snakeGallery3.src}
+          data-lightbox="snake"
+          data-caption={t("snake_gallery_3_caption")}
+          ><Image src={snakeGallery3} alt={t("snake_gallery_3_alt")} /></a
+        >
+        <a
+          href={snakeGallery4.src}
+          data-lightbox="snake"
+          data-caption={t("snake_gallery_4_caption")}
+          ><Image src={snakeGallery4} alt={t("snake_gallery_4_alt")} /></a
+        >
       </div>
       <footer class="buttons">
         <a href="https://github.com/SaySaeqo/kosmiczna_magisterka">
@@ -271,7 +330,12 @@ const { lang } = Astro.params;
         </section>
       </div>
       <div class="img-gallery">
-        <Image src={cprofileGallery} alt={t("cprofile_gallery_1_alt")} />
+        <a
+          href={cprofileGallery.src}
+          data-lightbox
+          data-caption={t("cprofile_gallery_1_caption")}
+          ><Image src={cprofileGallery} alt={t("cprofile_gallery_1_alt")} /></a
+        >
       </div>
       <footer class="buttons">
         <a
@@ -319,10 +383,30 @@ const { lang } = Astro.params;
         </section>
       </div>
       <div class="img-gallery">
-        <Image src={kritaGallery1} alt={t("krita_gallery_1_alt")} />
-        <Image src={kritaGallery2} alt={t("krita_gallery_2_alt")} />
-        <Image src={kritaGallery3} alt={t("krita_gallery_3_alt")} />
-        <Image src={kritaGallery4} alt={t("krita_gallery_4_alt")} />
+        <a
+          href={kritaGallery1.src}
+          data-lightbox="krita"
+          data-caption={t("krita_gallery_1_caption")}
+          ><Image src={kritaGallery1} alt={t("krita_gallery_1_alt")} /></a
+        >
+        <a
+          href={kritaGallery2.src}
+          data-lightbox="krita"
+          data-caption={t("krita_gallery_2_caption")}
+          ><Image src={kritaGallery2} alt={t("krita_gallery_2_alt")} /></a
+        >
+        <a
+          href={kritaGallery3.src}
+          data-lightbox="krita"
+          data-caption={t("krita_gallery_3_caption")}
+          ><Image src={kritaGallery3} alt={t("krita_gallery_3_alt")} /></a
+        >
+        <a
+          href={kritaGallery4.src}
+          data-lightbox="krita"
+          data-caption={t("krita_gallery_4_caption")}
+          ><Image src={kritaGallery4} alt={t("krita_gallery_4_alt")} /></a
+        >
       </div>
       <footer class="buttons">
         <a
@@ -363,39 +447,206 @@ const { lang } = Astro.params;
   </button>
 
   <script>
-    // Adjust #best-project h3 sizes to one size
-    function equalizeProjectHeadingColumns() {
-      const sections = document.querySelectorAll<HTMLElement>(
-        "#best-projects .section-box > a",
-      );
+    import { Lightbox } from "lightbox3";
 
-      const headings = [...sections].map((section) =>
-        section.querySelector<HTMLElement>("h3"),
-      );
-      const widestHeading = Math.max(
-        ...headings.map((h) => h.getBoundingClientRect().width),
-      );
-      sections.forEach((section) => {
-        section.style.gridTemplateColumns = `${widestHeading}px auto max-content`;
+    window.onload = () => {
+      const lb = Lightbox.init();
+
+      // Adjust #best-project h3 sizes to one size
+      function equalizeProjectHeadingColumns() {
+        const sections = document.querySelectorAll<HTMLElement>(
+          "#best-projects .section-box > a",
+        );
+
+        sections.forEach((section) => {
+          section.style.gridTemplateColumns = "";
+        });
+
+        const headings = [...sections].map((section) =>
+          section.querySelector<HTMLElement>("h3"),
+        );
+        const widestHeading = Math.max(
+          ...headings.map((h) => h.getBoundingClientRect().width),
+        );
+        sections.forEach((section) => {
+          section.style.gridTemplateColumns = `${widestHeading}px auto max-content`;
+        });
+      }
+
+      equalizeProjectHeadingColumns();
+      document.fonts.onloadingdone = equalizeProjectHeadingColumns;
+
+      // Adjust opacity of back-to-top button based on body scroll
+      const backToTopButton =
+        document.querySelector<HTMLElement>("#back-to-top");
+
+      function updateBackToTopOpacity() {
+        if (!backToTopButton) return;
+
+        const isScrolled = window.scrollY > 200;
+        backToTopButton.style.opacity = isScrolled ? "1" : "0";
+        backToTopButton.style.pointerEvents = isScrolled ? "auto" : "none";
+      }
+
+      window.addEventListener("scroll", updateBackToTopOpacity, {
+        passive: true,
       });
+      updateBackToTopOpacity();
+
+      // Change bg color based on position on page
+      const colors = [
+        // {id: "best-projects", color: "rgb(247, 253, 225)"},
+        // {id: "websites", color: "rgb(255, 227, 234)"},
+        { id: "satellite-model", color: "rgb(231, 247, 249)" },
+        { id: "pygame-snake", color: "rgb(224, 255, 202)" },
+        { id: "cprofile-vsc", color: "rgb(255, 221, 211)" },
+        { id: "krita-plugin", color: "rgb(255, 229, 251)" },
+      ];
+      function changeBg() {
+        document.body.style.backgroundColor = "#ffffff";
+        for (const el of colors) {
+          const top = document
+            .getElementById(el.id)
+            .getBoundingClientRect().top;
+          if (top < (screen.height * 4) / 7)
+            document.body.style.backgroundColor = el.color;
+          if (top > 0) break;
+        }
+      }
+      changeBg();
+      window.addEventListener("scroll", changeBg, {
+        passive: true,
+      });
+
+      // profile photo changes every...
+      const CHANGE_EVERY_MS = 60_000;
+      const profilePhotoBox =
+        document.querySelector<HTMLElement>("#about-me .img-box");
+      const profileImage =
+        profilePhotoBox?.querySelector<HTMLImageElement>("img");
+      const profilePhotos = JSON.parse(
+        profilePhotoBox?.dataset.profilePhotos ?? "[]",
+      ) as string[];
+
+      if (profileImage && profilePhotos.length > 1) {
+        let currentPhoto = 0;
+
+        setInterval(() => {
+          profilePhotoBox.classList.add("is-fading");
+          profilePhotoBox.classList.remove("fades-out");
+
+          setTimeout(() => {
+            currentPhoto = (currentPhoto + 1) % profilePhotos.length;
+            profileImage.src = profilePhotos[currentPhoto];
+            profileImage.removeAttribute("srcset");
+            profilePhotoBox.classList.remove("is-fading");
+            profilePhotoBox.classList.add("fades-out");
+          }, 2_000);
+        }, CHANGE_EVERY_MS);
+      }
+
+      // video popup
+      const videoBox = document.querySelector<HTMLElement>("[data-videobox]");
+      videoBox?.addEventListener("click", (e) => {
+        e.preventDefault();
+        const popup = document.createElement("div");
+        popup.classList.add("lightbox3-overlay");
+        popup.role = "dialog";
+        popup.ariaModal = "true";
+        const backdrop = document.createElement("div");
+        backdrop.classList.add("lightbox3-backdrop");
+        backdrop.style.opacity = "1";
+        backdrop.addEventListener("click", () =>
+          document.body.removeChild(popup),
+        );
+        popup.appendChild(backdrop);
+        const strip = document.createElement("div");
+        strip.classList.add("lightbox3-strip");
+        const slide = document.createElement("div");
+        slide.classList.add("lightbox3-slide");
+        slide.style.left = "0";
+        slide.style.display = "flex";
+        slide.style.justifyContent = "center";
+        slide.style.alignItems = "center";
+        const video = document.createElement("video");
+        video.classList.add("lightbox3-image");
+        video.style.width = "auto";
+        video.style.maxWidth = "100%";
+        video.style.maxHeight = "90%";
+        video.style.borderRadius = "var(--lb-image-border-radius)";
+        video.style.pointerEvents = "auto";
+        video.style.cursor = "pointer";
+        const source = document.createElement("source");
+        source.src = videoBox.href;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        const source2 = document.createElement("source");
+        source2.src = videoBox.dataset.webm;
+        source2.type = "video/webm";
+        video.appendChild(source2);
+        video.autoplay = true;
+        video.playsInline = true;
+        video.muted = true;
+        // video.controls = true;
+        const pause = document.createElement("i");
+        pause.classList.add("fa-solid");
+        pause.classList.add("fa-pause");
+        pause.style.color = "white";
+        pause.style.fontSize = "22px";
+        pause.style.position = "absolute";
+        pause.style.left = "50%";
+        pause.style.top = "50%";
+        pause.style.transform = "translate(-50%, -50%)";
+        video.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (video.paused) {
+            slide.removeChild(pause);
+            video.play();
+          } else {
+            video.pause();
+            slide.appendChild(pause);
+          }
+        });
+        slide.appendChild(video);
+        strip.appendChild(slide);
+        popup.appendChild(strip);
+        const chrome = document.createElement("div");
+        chrome.classList.add("lightbox3-chrome");
+        chrome.style.opacity = "1";
+        chrome.style.transform = "translateX(calc(-50% + 0px)) translateY(0px)";
+        const caption = document.createElement("span");
+        caption.classList.add("lightbox3-caption");
+        caption.textContent = videoBox.dataset.caption;
+        const close = document.createElement("button");
+        close.classList.add("lightbox3-close");
+        close.ariaLabel = "close";
+        close.type = "button";
+        close.style.transform = "scale(1)";
+        close.addEventListener("click", () => document.body.removeChild(popup));
+        chrome.appendChild(caption);
+        chrome.appendChild(close);
+        popup.appendChild(chrome);
+        document.body.appendChild(popup);
+      });
+      function devFontSizeSwitcher() {
+        const font_sizes = ['12px', '14px', '16px', '18px', '20px', '22px'];
+        let font_size_index = 2; // default 16px
+        const button = document.createElement('button');
+        button.textContent = font_sizes[font_size_index];
+      button.onclick = () => {
+        font_size_index = (font_size_index + 1) % font_sizes.length;
+        document.documentElement.style.fontSize = font_sizes[font_size_index];
+        button.textContent = font_sizes[font_size_index];
+        // setTimeout(equalizeProjectHeadingColumns, 1000);
+        equalizeProjectHeadingColumns();
+      }
+      button.style.position = 'fixed';
+      button.style.bottom = '10px';
+      button.style.right = '10px';
+      button.style.zIndex = '9999';
+      document.body.appendChild(button);
     }
-
-    window.onload = equalizeProjectHeadingColumns;
-
-    // Adjust opacity of back-to-top button based on body scroll
-    const backToTopButton = document.querySelector<HTMLElement>("#back-to-top");
-
-    function updateBackToTopOpacity() {
-      if (!backToTopButton) return;
-
-      const isScrolled = window.scrollY > 200;
-      backToTopButton.style.opacity = isScrolled ? "1" : "0";
-      backToTopButton.style.pointerEvents = isScrolled ? "auto" : "none";
-    }
-
-    window.addEventListener("scroll", updateBackToTopOpacity, {
-      passive: true,
-    });
-    updateBackToTopOpacity();
+    // devFontSizeSwitcher();
+  };
   </script>
 </Layout>

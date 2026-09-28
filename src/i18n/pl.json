@@ -1,14 +1,14 @@
 {
   "page_title": "Tomasz Piwowski – Programista",
   "page_description": "Lista najważniejszych samodzielnych projektów informatycznych oraz krótka informacja o kompetencjach w zakresie znajomości technologii informatycznych. Uzupełnienie do CV.",
-  "hero_title": "Wizytówka",
+  "hero_title": "Programista",
   "nav_language": "pl",
   "copyright": "© 2026 SaySaeqo",
   "contact_email": "t.piwowski@hotmail.com",
 
   "about_greeting": "Cześć, jestem Tomek. Człowiek o wielu talentach 😉",
   "about_description": "Programuje od wielu lat, mam doświadczenie korporacyjne i wiele samodzielnych projektów na swoim koncie. ",
-  "profile_photo_alt": "Autoportret Tomka",
+  "profile_photo_alt": "Autoportret Tomka narysowany w bardzo uproszczonym stylu.",
 
   "skills_favorites": "Ulubione:",
   "skills_most_experience": "Najwięcej doświadczenia:",
@@ -47,6 +47,9 @@
   "satellite_gallery_1_alt": "Krótki film z prezentacją modelu i jego funkcjonalości. Na obrazku postać z założynymi goglami VR i model na dedykowanym stojaku w tle.",
   "satellite_gallery_2_alt": "Zdjęcie modelu z 2 stron. Kontrukcja wykonana w technologi druku 3D z białego materiału. Brak obudowny pozwala dojrzeć komponenty elektroniczne wewnątrz.",
   "satellite_gallery_3_alt": "Dedykowanym stojak składający się z drewnianych podpór i metalowego drążka, na którym bezwładnie zamieszony jest model.",
+  "satellite_gallery_1_caption": "Prezentacja modelu satelity sterowanego za pomocą gogli VR.",
+  "satellite_gallery_2_caption": "Widok modelu satelity z dwóch stron wraz z jego komponentami elektronicznymi.",
+  "satellite_gallery_3_caption": "Stojak umożliwiający swobodne zawieszenie modelu satelity.",
 
   "snake_title": "Pygame snake",
   "snake_subtitle": "Odmiana gry Snake z funkcją multiplayer po sieci lokalnej",
@@ -63,6 +66,10 @@
   "snake_gallery_2_alt": "Ekran gry. Na czarnym tle biały wąż składający się ze stykających się kółek tworzących jedną krzywą. Kolorowe pojedyncze kółka umieszczone są w losowych miejscach. Na górze ekranu zaprezentowano obecny wynik i czas gry.",
   "snake_gallery_3_alt": "Menu przycisków kontroli. Na czarnym tle duży napis 'CONTROLS', poniżej lista przycisków kontroli dla 3 graczy. Przy każdym elemencie listy widnieje wybrany klawisz kontroli.",
   "snake_gallery_4_alt": "Ekran poczekalni internetowej. Na czarnym tle duży napis 'Network Room', poniżej adres IP hosta i lista podłączonych graczy z ich nazwami, adresami ip i portami.",
+  "snake_gallery_1_caption": "Menu główne gry Snake.",
+  "snake_gallery_2_caption": "Rozgrywka w grze Snake.",
+  "snake_gallery_3_caption": "Menu konfiguracji przycisków sterowania.",
+  "snake_gallery_4_caption": "Pokój sieciowy z listą połączonych graczy.",
 
   "cprofile_title": "Python CProfile VSC Extension",
   "cprofile_subtitle": "Rozszerzenie do VSCode ułatwiające korzystanie z modułu CProfile",
@@ -74,6 +81,7 @@
   "cprofile_description_p1": "Rozszerzenie do programu VS Code, które przydało mi się przy innym projekcie. Nie mogłem znaleźć darmowego profilera, który w wygodny sposób pokazywałby mi, gdzie znajdują się wąskie gardła mojej aplikacji, więc stworzyłem swój własny.",
   "cprofile_description_p2": "Jednak nie było potrzeby tworzyć całego mechanizmu. Po dokładnym sprawdzeniu dostępnych rozwiązań, znalazłem program, wbudowany w język Python, z którego mogłem pobrać niezbędne dane. Zatem dopisałem tylko rozszerzenie, które przemieni te dane w wygodny do obsługi interfejs. W ten sposób zyskałem stabilność sprawdzonego profilera i wygodę związaną z nowoczesnych wyglądem.",
   "cprofile_gallery_1_alt": "Kod programu w języku Python. Linie z nazwami funkcji mają czerwone tło z różnym natężeniem tego koloru. Przy nazwach funkcji znajduje się czas wyrażony w sekundach.",
+  "cprofile_gallery_1_caption": "Widok kodu z zaznaczonym czasem wykonania poszczególnych funkcji.",
 
   "krita_title": "Sketchbook Krita Plugin",
   "krita_subtitle": "Plugin do programu graficznego Krita usprawniający zapisywanie obrazów",
@@ -90,6 +98,10 @@
   "krita_gallery_2_alt": "Okno z tytułem 'Open new sketchbook'. Poniżej pola na wprowadzenie ścieżki do szkicownika, szablonu i prefixu. Na dole przyciski 'create' i 'cancel'.",
   "krita_gallery_3_alt": "Widok dokumentu programu Krita z otwartym oknem zapisywania obrazu. Po lewej czerwone napisy z instrukcją szybkiego otworzenia nowej strony szkicownika.",
   "krita_gallery_4_alt": "Widok folderu z eksploratora plików. Wszystkie pliki zaczynają się tym samym prefixem. Pliki png kończą się cyfrą. Pliki kra kończą się słowami 'last' lub 'template'.",
+  "krita_gallery_1_caption": "Menu pluginu Sketchbook w programie Krita.",
+  "krita_gallery_2_caption": "Okno tworzenia nowego szkicownika.",
+  "krita_gallery_3_caption": "Dokument Krita z instrukcją szybkiego otwarcia nowej strony szkicownika.",
+  "krita_gallery_4_caption": "Pliki szkicownika uporządkowane według wspólnego prefiksu.",
 
   "website_perfektrp_title": "perfektrp.pl",
   "website_perfektrp_description": "Strona-wizytówka firmy dekarskiej.",

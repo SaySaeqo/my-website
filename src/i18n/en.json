@@ -1,14 +1,14 @@
 {
   "page_title": "Tomasz Piwowski – Programmer",
   "page_description": "A selection of my most important independent software projects and a brief overview of my IT skills. A supplement to my CV.",
-  "hero_title": "Buisness Card",
+  "hero_title": "Programmer",
   "nav_language": "en",
   "copyright": "© 2026 SaySaeqo",
   "contact_email": "t.piwowski@hotmail.com",
 
   "about_greeting": "Hi, I'm Tomek. A man of many talents 😉",
   "about_description": "I've been programming for many years, I have corporate experience and many independent projects to my name. ",
-  "profile_photo_alt": "Tomek's self-portrait",
+  "profile_photo_alt": "Tomek's self-portrait drawn in really simplified style.",
 
   "skills_favorites": "Favorites:",
   "skills_most_experience": "Most experience:",
@@ -47,6 +47,9 @@
   "satellite_gallery_1_alt": "Short video presenting the model and its functionality. The image shows a person wearing VR goggles and the model on a dedicated stand in the background.",
   "satellite_gallery_2_alt": "Photo of the model from two sides. The structure is made using 3D printing technology with white material. The lack of a housing allows the electronic components inside to be seen.",
   "satellite_gallery_3_alt": "Dedicated stand consisting of wooden supports and a metal rod on which the model is suspended.",
+  "satellite_gallery_1_caption": "Presentation of the satellite model controlled using VR goggles.",
+  "satellite_gallery_2_caption": "Two-sided view of the satellite model with its electronic components.",
+  "satellite_gallery_3_caption": "Stand allowing the satellite model to be freely suspended.",
 
   "snake_title": "Pygame snake",
   "snake_subtitle": "A variant of the Snake game with local network multiplayer functionality",
@@ -63,6 +66,10 @@
   "snake_gallery_2_alt": "Game screen. On a black background, a white snake made of touching circles forms a single curve. Colored single circles are placed in random locations. At the top of the screen, the current score and game time are shown.",
   "snake_gallery_3_alt": "Control button menu. On a black background, a large 'CONTROLS' title is shown, followed by a list of control buttons for 3 players. Each list item displays the selected control key.",
   "snake_gallery_4_alt": "Online lobby screen. On a black background, a large 'Network Room' title is shown, followed by the host's IP address and a list of connected players with their names, IP addresses, and ports.",
+  "snake_gallery_1_caption": "Main menu of the Snake game.",
+  "snake_gallery_2_caption": "Snake gameplay.",
+  "snake_gallery_3_caption": "Control button configuration menu.",
+  "snake_gallery_4_caption": "Network room with a list of connected players.",
 
   "cprofile_title": "Python CProfile VSC Extension",
   "cprofile_subtitle": "Extension for VSCode facilitating the use of the CProfile module",
@@ -74,6 +81,7 @@
   "cprofile_description_p1": "An extension for VS Code that came in handy during another project. I couldn't find a free profiler that would conveniently show me where the bottlenecks in my application were, so I created my own.",
   "cprofile_description_p2": "However, there was no need to build the entire mechanism. After thoroughly checking available solutions, I found a program built into the Python language from which I could retrieve the necessary data. So I only wrote the extension that transforms this data into a convenient interface. This way, I gained the stability of a proven profiler and the convenience associated with a modern appearance.",
   "cprofile_gallery_1_alt": "Code of the program in Python. Lines with function names have red backgrounds in varying shades. The function names are followed by execution times expressed in seconds.",
+  "cprofile_gallery_1_caption": "Code view with the execution time of individual functions highlighted.",
 
   "krita_title": "Sketchbook Krita Plugin",
   "krita_subtitle": "Plugin for the Krita graphics program that streamlines saving images",
@@ -90,6 +98,10 @@
   "krita_gallery_2_alt": "Window titled 'Open new sketchbook'. Below title are fields for entering the sketchbook path, template, and prefix. At the bottom are the 'create' and 'cancel' buttons.",
   "krita_gallery_3_alt": "View of the Krita document with the image-saving window open. On the left, red text instructions explain how to quickly open a new sketchbook page.",
   "krita_gallery_4_alt": "View of a folder in the file explorer. All files start with the same prefix. PNG files end with a number. KRA files end with the words 'last' or 'template'.",
+  "krita_gallery_1_caption": "Sketchbook plugin menu in Krita.",
+  "krita_gallery_2_caption": "Window for creating a new sketchbook.",
+  "krita_gallery_3_caption": "Krita document with instructions for quickly opening a new sketchbook page.",
+  "krita_gallery_4_caption": "Sketchbook files organized by a common prefix.",
 
   "website_perfektrp_title": "perfektrp.pl",
   "website_perfektrp_description": "Business card website for a roofing company.",
