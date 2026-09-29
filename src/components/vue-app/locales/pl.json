@@ -15,5 +15,9 @@
         "title": "PythonAnywhere",
         "description": "Moja strona na PythonAnywhere."
     },
+    "programmer": {
+        "title": "Zatrudnij mnie jako programistę! 🙂",
+        "description": "Skrót z moich projektów informatycznych. Uzupełnienie do CV."
+    },
     "comments": "Komentarze"
 }

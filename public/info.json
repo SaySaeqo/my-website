@@ -21,6 +21,12 @@
             "url": "/pythonanywhere",
             "icon": "/icons/pythonanywhere.png",
             "isExternal": true
+        },
+        {
+            "key": "programmer",
+            "url": "/pl/asprogrammer",
+            "icon": "/icons/programmer.svg",
+            "isExternal": true
         }
     ],
     "img": "/icons/avatar.png",
