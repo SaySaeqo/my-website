@@ -151,6 +151,7 @@ body {
     margin-left: 3vw;
     display: grid;
     align-items: center;
+    align-self: stretch;
     grid-template-columns: max-content auto repeat(3, max-content);
     gap: 1rem;
     @include mobile {
