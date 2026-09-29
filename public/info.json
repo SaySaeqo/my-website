@@ -24,7 +24,7 @@
         },
         {
             "key": "programmer",
-            "url": "/pl/asprogrammer",
+            "url": "/pl/programmer",
             "icon": "/icons/programmer.svg",
             "isExternal": true
         }
