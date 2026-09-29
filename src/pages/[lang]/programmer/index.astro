@@ -428,7 +428,7 @@ const { lang } = Astro.params;
     <select
       name="language"
       id="language"
-      onchange="location.href=`/${event.target.value}/asprogrammer`"
+      onchange="location.href=`/${event.target.value}/${location.pathname.split('/').filter((e)=>e !== '').pop()}`"
     >
       <option value="pl" selected={lang === "pl"}>pl</option>
       <option value="en" selected={lang === "en"}>en</option>
