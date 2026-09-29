@@ -229,6 +229,7 @@ main {
     border: 1px solid $border_color;
     border-radius: 100%;
     width: 100%;
+    max-width: 40vh;
     height: auto;
     box-sizing: border-box;
     display: flex;
@@ -237,6 +238,7 @@ main {
     padding: 10%;
     @include mobile {
       width: 90%;
+      padding: 5%;
     }
     img {
       width: 100%;
