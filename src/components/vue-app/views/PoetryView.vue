@@ -9,17 +9,6 @@
                 <p class="author">~SaySaeqo</p>
             </div>
         </div>
-        <h2>{{ t('comments') }}</h2>
-        <vue-cusdis
-            :attrs="{
-            host: 'https://cusdis.com',
-            appId: '72045998-e06e-4430-a256-117c5fb15049',
-            pageId: location.hash,
-            pageTitle: 'Poetry',
-            pageUrl: location,
-            }"
-            class="comments"
-        ></vue-cusdis>
     </BorderBox>
 </template>
 
