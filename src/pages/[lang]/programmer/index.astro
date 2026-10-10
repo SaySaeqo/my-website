@@ -513,10 +513,13 @@ const { lang } = Astro.params;
           if (top > 0) break;
         }
       }
-      changeBg();
-      window.addEventListener("scroll", changeBg, {
-        passive: true,
-      });
+      // colors on mobiles only
+      if (window.innerWidth <= 1000 && window.innerHeight > window.innerWidth) {
+        changeBg();
+        window.addEventListener("scroll", changeBg, {
+          passive: true,
+        });
+      }
 
       // profile photo changes every...
       const CHANGE_EVERY_MS = 60_000;
