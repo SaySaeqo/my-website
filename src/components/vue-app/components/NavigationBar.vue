@@ -1,25 +1,26 @@
 <template>
-    <nav class="navigation-bar" :class="isOpen ? 'open' : ''">
-      <img :src="hamburgerMenu" class="hamburger-menu" @click="isOpen = !isOpen">
-      <div v-for="page in pages" :key="page.url">
-        <router-link v-if="!page.isExternal" 
-          :to="page.url" :style="onBigScreen ? 'display:flex;' : ''">
-          <img :src="page.icon">
-          <p>{{ $t(page.key + '.title') }}</p>
-        </router-link>
-        <a v-else 
-          :href="page.url" :style="onBigScreen ? 'display:flex;' : ''">
-          <img :src="page.icon">
-          <p>
-            {{ $t(page.key + '.title') }}
-            <span v-if="page.key==='pythonanywhere' && pythonAnywhereActive">🟢</span>
-            <span v-else-if="page.key==='pythonanywhere' && !pythonAnywhereActive">🔴</span>
-          </p>
-        </a>
-      </div>
-    </nav>
+  <nav class="navigation-bar" :class="isOpen ? 'open' : ''">
+    <img :src="hamburgerMenu" class="hamburger-menu" @click="isOpen = !isOpen">
+    <div v-for="page in pages" :key="page.url">
+      <router-link v-if="!page.isExternal" :to="page.url" :style="onBigScreen ? 'display:flex;' : ''"
+      
+        @click="isOpen = page.url === $route.path" :class="$route.path === page.url ? 'active' : ''">
+        <img :src="page.icon">
+        <p>{{ $t(page.key + '.title') }}</p>
+      </router-link>
+      <a v-else :href="page.url" :style="onBigScreen ? 'display:flex;' : ''"
+        :class="$route.path === page.url ? 'active' : ''">
+        <img :src="page.icon">
+        <p>
+          {{ $t(page.key + '.title') }}
+          <span v-if="page.key === 'pythonanywhere' && pythonAnywhereActive">🟢</span>
+          <span v-else-if="page.key === 'pythonanywhere' && !pythonAnywhereActive">🔴</span>
+        </p>
+      </a>
+    </div>
+  </nav>
 </template>
-  
+
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "axios";
@@ -31,14 +32,14 @@ export default defineComponent({
   name: "NavigationBar",
   data() {
     return {
-        pages: [{url: "", key: "", icon: "", isExternal: false}],
-        info: "",
-        img: "/info_image",
-        socials: [{url: "", icon: ""}],
-        isOpen: false,
-        onBigScreen: false,
-        pythonAnywhereActive: false,
-        hamburgerMenu
+      pages: [{ url: "", key: "", icon: "", isExternal: false }],
+      info: "",
+      img: "/info_image",
+      socials: [{ url: "", icon: "" }],
+      isOpen: false,
+      onBigScreen: false,
+      pythonAnywhereActive: false,
+      hamburgerMenu
     };
   },
   async created() {
@@ -66,9 +67,8 @@ export default defineComponent({
   },
 });
 </script>
-  
-<style scoped>
 
+<style scoped>
 .navigation-bar {
   display: flex;
   flex-direction: column;
@@ -76,15 +76,18 @@ export default defineComponent({
 
   img.hamburger-menu {
     background-color: #f8f9fa;
-    outline: #2c3e50  1px solid;
+    outline: #2c3e50 1px solid;
   }
+
   img.hamburger-menu:hover {
     cursor: pointer;
   }
+
   img {
     height: 3em;
     padding: 0.5em;
   }
+
   a {
     display: none;
     align-items: center;
@@ -92,7 +95,7 @@ export default defineComponent({
     width: 4em;
     overflow: hidden;
     background-color: #f8f9fa;
-    outline: #2c3e50  1px solid;
+    outline: #2c3e50 1px solid;
     border-top: 0;
 
     p {
@@ -103,10 +106,16 @@ export default defineComponent({
     }
 
   }
+
+  a.active {
+    font-weight: 600;
+  }
+
   a:hover {
     width: 20em;
     padding-right: 2em;
   }
+
   a:visited {
     color: inherit;
   }
@@ -121,4 +130,3 @@ nav.open {
   }
 }
 </style>
-  
