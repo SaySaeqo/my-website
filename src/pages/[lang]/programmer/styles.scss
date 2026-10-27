@@ -260,9 +260,10 @@ main {
     align-self: stretch;
     > p {
       margin-top: 9px;
-      margin-bottom: 40px;
+      // margin-bottom: 40px;
     }
     .skills {
+      margin: 40px 0;
       row-gap: 0.6rem;
       column-gap: 2rem;
       display: grid;
@@ -291,6 +292,30 @@ main {
           border: 1px solid $border_color;
           font-size: 0.8rem;
         }
+      }
+    }
+    .button {
+      // align-self: flex-end;
+      cursor: pointer;
+      border: 1px solid $border_color;
+      border-radius: $border_radius;
+      background-color: $bg;
+      padding: 16px 60px;
+      display: flex;
+      width: fit-content;
+      gap: 16px;
+      align-items: center;
+      font-size: 1rem;
+      @include mobile {
+        width: auto;
+        justify-content: center;
+      }
+      i {
+        font-size: 1.5rem;
+      }
+      img {
+        width: auto;
+        height: 1.5rem;
       }
     }
   }
